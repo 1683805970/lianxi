@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <h2>总价格：{{fullName}}</h2>
+        <h2>{{getFullName}}</h2>
+    </div>
+
+    <script src="../vuejs-2.5.16.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data:{
+                message:'你好啊！',
+                books: [
+                    {id: 110, name: 'Unix编程艺术', price: 119},
+                    {id: 111, name: 'sssss', price: 105},
+                    {id: 112, name: 'ddddd', price: 9},
+                    {id: 113, name: 'dddsss', price: 87}
+                    ]
+            },
+            //computed:计算属性
+            computed:{
+                fullName: function(){
+                    let result = 0
+                    for(let i = 0; i< this.books.length; i++){
+                        result += this.books[i].price
+                    }
+                    return result
+                }
+            },
+            methods: { 
+                getFullName() {
+                    return this.firstName + ' ' + this.lastName
+                }
+            },
+        })
+    </script>
+</body>
+</html>

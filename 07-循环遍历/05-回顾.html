@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .active{
+        color: red;
+    }
+</style>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item,index in message"
+                :class="{active:currentIndex == index}"
+                @click="liClick(index)">{{item}}</li>
+        </ul>
+    </div>
+
+    <script src="../vuejs-2.5.16.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message:['得到','速度','发的','安抚'],
+               
+            },
+            methods: {
+                liClick(index){
+                    this.currentIndex = index
+                }
+            },
+        })
+    </script>
+</body>
+</html>

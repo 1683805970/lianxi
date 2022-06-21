@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- false消失代码：一次切换使用 -->
+        <h2 v-if="one" id="aa0">{{message}}</h2>
+
+
+        <!-- false加dispay：“none”样式 ：多次切换使用 -->
+        <h2 v-show="wht" id="bb0">{{message}}</h2>
+    </div>
+
+    <script src="../vuejs-2.5.16.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message:'你好啊！',
+                one:false //true
+            },
+        })
+    </script>
+</body>
+</html>

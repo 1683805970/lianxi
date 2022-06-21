@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 使用组件 -->
+        <cpnc2></cpnc2>
+    </div>
+     <script src="../vuejs-2.5.16.js"></script>
+    <script>
+        // 1.创建第一个组件（子组件）
+        const cpnC1 = Vue.extend({
+            template: `
+                    <div>
+                        <h2>我是标题1</h2>
+                        <div>我是内容，哈哈</div>
+                        <div>我是内容，呵呵哈哈哈</div>
+                    </div>
+                `
+        })
+
+        // 2.创建第二个组件构造器(父组件) template里的内容会被渲染成render函数
+        const cpnC2 = Vue.extend({
+            template: `
+                    <div>
+                        <cpnc1></cpnc1>
+                        <h2>我是标题2</h2>
+                        <div>我是内容，哈哈</div>
+                        <div>我是内容，呵呵哈哈哈</div>
+                    </div>
+                `,
+                components: {
+                    cpnc1: cpnC1
+                }
+        })
+    
+        const app = new Vue({
+            el:'#app',
+            data: {
+                
+            },
+            components: {
+                cpnc2: cpnC2
+            }
+        })
+    </script>
+</body>
+</html>

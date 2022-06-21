@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 单选框checkbox -->
+        <ul>
+            <li v-for="item in hobbies"><input type="checkbox" v-model="isAgree" value="item" >{{item}}</li>
+        </ul>
+           
+           <!-- <input type="checkbox" v-model="isAgree" value="a">排球
+           <input type="checkbox" v-model="isAgree" value="a">乒乓球
+           <input type="checkbox" v-model="isAgree" value="a">羽毛球
+           <input type="checkbox" v-model="isAgree" value="a">足球 -->
+           <h2>你的用户是：{{isAfree}}</h2>
+    </div>
+
+    <script src="../vuejs-2.5.16.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message:'你好啊！',
+                hobbies:['篮球','乒乓球','足球','羽毛球','排球'],
+                isAfree:[],
+                
+            }
+        })
+    </script>
+</body>
+</html>

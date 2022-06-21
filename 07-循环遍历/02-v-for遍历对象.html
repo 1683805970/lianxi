@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in info">{{item}}</li>
+        </ul>
+
+        <ul>
+            <!-- 先获取值item，在获取变量名key，然后是下标 -->
+            <li v-for="(item,key,a) in info">{{key}}:{{item}}:{{a}}</li>
+        </ul>
+    </div>
+
+    <script src="../vuejs-2.5.16.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                info:{
+                    name:'why',
+                    age:19,
+                    height:1.88
+                }
+            },
+        })
+    </script>
+</body>
+</html>

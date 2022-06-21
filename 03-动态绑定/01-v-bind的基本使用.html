@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <a v-bind:href="add">百度一下</a>
+        <!-- 语法糖（简写）':'' -->
+        <a :href="add">百度</a>
+    </div>
+
+    <script src="../vuejs-2.5.16.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message:'你好啊！',
+                add:'https://www.baidu.com/?tn=44004473_21_oem_dg'
+            }
+        })
+    </script>
+</body>
+</html>
