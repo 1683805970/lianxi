@@ -9,15 +9,24 @@
 <body>
     <div id="app">
         <h2>{{message}}</h2>
-        <cpn v-show="isShow"></cpn>
-        <cpn></cpn>
+        <!-- <cpn v-show="isShow"></cpn> -->
+        <cpn>
+            <template slot-scope="slot">
+                <div>
+                    <!-- <span v-for="item in slot.data">{{item}} - </span> -->
+                    <span>{{slot.data.join(' - ')}}</span>
+                </div>
+            </template>
+        </cpn>
     </div>
 
     <template id="cpn">
         <div>
-            <ul>
-                <li v-for="item in planguages">{{item}}</li>
-            </ul>
+            <slot :data="planguages">
+                <ul>
+                    <li v-for="item in planguages">{{item}}</li>
+                </ul>  
+            </slot>
         </div>
     </template>
 
@@ -36,7 +45,8 @@
                         return {
                             planguages:['JavaScript','c++','Java','c#','python','Go','Swift']
                         }
-                    }
+                    },
+                    
                 }
             }
         })
